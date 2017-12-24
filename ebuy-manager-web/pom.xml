@@ -3,24 +3,37 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ebuy-manager</artifactId>
         <groupId>cn.porkchop.ebuy</groupId>
+        <artifactId>ebuy-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ebuy-manager-service</artifactId>
+    <artifactId>ebuy-manager-web</artifactId>
     <packaging>war</packaging>
+
     <dependencies>
+
         <dependency>
             <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-manager-dao</artifactId>
+            <artifactId>ebuy-manager-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <!-- JSP相关 -->
         <dependency>
-            <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-manager-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <!-- spring的依赖 -->
         <!-- Spring -->
@@ -76,4 +89,17 @@
             <artifactId>zkclient</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <!-- 配置Tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <path>/ebuy</path>
+                    <port>8080</port>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

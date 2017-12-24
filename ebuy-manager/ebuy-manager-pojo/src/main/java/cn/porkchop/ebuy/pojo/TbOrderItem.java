@@ -1,6 +1,8 @@
 package cn.porkchop.ebuy.pojo;
 
-public class TbOrderItem {
+import java.io.Serializable;
+
+public class TbOrderItem  implements Serializable {
     private String id;
 
     private String itemId;

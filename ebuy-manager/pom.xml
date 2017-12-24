@@ -16,7 +16,6 @@
         <module>ebuy-manager-dao</module>
         <module>ebuy-manager-interface</module>
         <module>ebuy-manager-service</module>
-        <module>ebuy-manager-web</module>
         <module>ebuy-manager-pojo</module>
     </modules>
 
@@ -28,7 +27,7 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-    <!-- 配置tomcat插件 -->
+     <!--配置tomcat插件-->
     <build>
         <plugins>
             <plugin>
@@ -36,7 +35,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <!-- 版本号在parent中已定义 -->
                 <configuration>
-                    <port>8082</port>
+                    <port>8081</port>
                     <path>/</path>
                 </configuration>
             </plugin>

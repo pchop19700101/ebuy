@@ -12,7 +12,7 @@ public class ItemServiceImpl implements ItemService {
     private TbItemMapper tbItemMapper;
 
     @Override
-    public TbItem getItemById(long id) {
+    public TbItem getItemById(Long id) {
 
         return tbItemMapper.selectByPrimaryKey(id);
 

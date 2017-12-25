@@ -96,7 +96,7 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
-                    <path>/ebuy</path>
+                    <path>/</path>
                     <port>8080</port>
                 </configuration>
             </plugin>

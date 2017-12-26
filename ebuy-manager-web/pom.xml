@@ -16,7 +16,7 @@
 
         <dependency>
             <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-manager-service</artifactId>
+            <artifactId>ebuy-manager-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

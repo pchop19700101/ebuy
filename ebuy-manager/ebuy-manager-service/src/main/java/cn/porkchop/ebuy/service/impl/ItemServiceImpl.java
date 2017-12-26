@@ -2,6 +2,7 @@ package cn.porkchop.ebuy.service.impl;
 
 import cn.porkchop.ebuy.mapper.TbItemMapper;
 import cn.porkchop.ebuy.pojo.EasyUIDataGridResult;
+import cn.porkchop.ebuy.pojo.EasyUITreeNode;
 import cn.porkchop.ebuy.pojo.TbItem;
 import cn.porkchop.ebuy.pojo.TbItemExample;
 import cn.porkchop.ebuy.service.ItemService;
@@ -31,4 +32,5 @@ public class ItemServiceImpl implements ItemService {
         PageInfo<TbItem> pageInfo = new PageInfo<>(list);
         return new EasyUIDataGridResult(pageInfo.getTotal(),list);
     }
+
 }

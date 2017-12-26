@@ -20,7 +20,8 @@
     <mvc:resources location="/css/" mapping="/css/**"/>
 
     <!-- 引用dubbo服务 -->
-    <dubbo:application name="e3-manager-web"/>
+    <dubbo:application name="ebuy-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.193.128:2181"/>
     <dubbo:reference interface="cn.porkchop.ebuy.service.ItemService" id="itemService" />
+    <dubbo:reference interface="cn.porkchop.ebuy.service.ItemCatService" id="itemCatService" />
 </beans>

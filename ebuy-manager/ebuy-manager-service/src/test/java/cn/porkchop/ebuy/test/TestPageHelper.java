@@ -1,14 +1,18 @@
+package cn.porkchop.ebuy.test;
+
 import cn.porkchop.ebuy.mapper.TbItemMapper;
 import cn.porkchop.ebuy.pojo.TbItem;
 import cn.porkchop.ebuy.pojo.TbItemExample;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
 public class TestPageHelper {
+    @Test
     public void testPageHelper(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
         TbItemMapper tbItemMapper = applicationContext.getBean(TbItemMapper.class);

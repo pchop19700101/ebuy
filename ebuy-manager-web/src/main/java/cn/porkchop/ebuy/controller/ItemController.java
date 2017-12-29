@@ -1,5 +1,6 @@
 package cn.porkchop.ebuy.controller;
 
+import cn.porkchop.ebuy.pojo.E3Result;
 import cn.porkchop.ebuy.pojo.EasyUIDataGridResult;
 import cn.porkchop.ebuy.pojo.TbItem;
 import cn.porkchop.ebuy.service.ItemService;
@@ -50,5 +51,17 @@ public class ItemController {
         return easyUIDataGridResult;
     }
 
+    /**
+     * 添加商品
+     * @return
+     *
+     * @date 2017/12/29 20:32
+     * @author porkchop
+     */
+    @RequestMapping("/item/save")
+    @ResponseBody
+    private E3Result addItem(TbItem tbItem,String desc){
+        return itemService.addItem(tbItem, desc);
 
+    }
 }

@@ -103,7 +103,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.porkchop.ebuy.pojo.TbContentCategory" >
-    insert into tb_content_category (id, parent_id, name, 
+    <selectKey keyProperty="id" resultType="long" order="AFTER">
+      SELECT  last_insert_id();
+    </selectKey>
+    insert into tb_content_category (id, parent_id, name,
       status, sort_order, is_parent, 
       created, updated)
     values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 

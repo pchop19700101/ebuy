@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("SpringJavaAutowiringInspection")
 @Service
 public class ItemCatServiceImpl implements ItemCatService {
     @Autowired

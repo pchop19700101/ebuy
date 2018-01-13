@@ -3,27 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>cn.porkchop.ebuy</groupId>
         <artifactId>ebuy-parent</artifactId>
+        <groupId>cn.porkchop.ebuy</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../ebuy-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>ebuy-manager-web</artifactId>
     <packaging>war</packaging>
 
+    <artifactId>ebuy-search-web</artifactId>
     <dependencies>
-
-        <dependency>
-            <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-manager-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-content-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>cn.porkchop.ebuy</groupId>
             <artifactId>ebuy-search-interface</artifactId>
@@ -97,15 +86,6 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
-        <!-- 文件上传组件 -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-io</artifactId>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -115,9 +95,10 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/</path>
-                    <port>8080</port>
+                    <port>8085</port>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>

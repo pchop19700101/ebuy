@@ -8,16 +8,32 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class E3Result implements Serializable{
 
-    // 定义jackson对象
+    /**
+     * 定义jackson对象
+     * @date 2018/1/10 22:23
+     * @author porkchop
+     */
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    // 响应业务状态
+    /**
+     * 响应业务状态
+     * @date 2018/1/10 22:23
+     * @author porkchop
+     */
     private Integer status;
 
-    // 响应消息
+    /**
+     * 响应消息
+     * @date 2018/1/10 22:23
+     * @author porkchop
+     */
     private String msg;
 
-    // 响应中的数据
+    /**
+     * 响应中的数据
+     * @date 2018/1/10 22:23
+     * @author porkchop
+     */
     private Object data;
 
     public static E3Result build(Integer status, String msg, Object data) {

@@ -5,12 +5,14 @@ import cn.porkchop.ebuy.pojo.TbItem;
 import cn.porkchop.ebuy.pojo.TbItemExample;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
 public class TestPageHelper {
+    @Test
     public void testPageHelper(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
         TbItemMapper tbItemMapper = applicationContext.getBean(TbItemMapper.class);
@@ -21,6 +23,5 @@ public class TestPageHelper {
         System.out.println(pageInfo.getPages());
         System.out.println(pageInfo.getPageNum());
         System.out.println(pageInfo.getPageSize());
-
     }
 }

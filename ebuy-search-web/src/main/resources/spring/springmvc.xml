@@ -27,4 +27,6 @@
 
     <!-- 加载常量的配置文件 -->
     <context:property-placeholder location="classpath:conf/resource.properties"/>
+
+    <bean class="cn.porkchop.ebuy.search.exception.GlobalExceptionReslover"/>
 </beans>

@@ -35,7 +35,5 @@
     <bean class="cn.porkchop.ebuy.search.dao.impl.SearchItemDaoImpl">
         <property name="solrServer" ref="httpSolrServer"/>
     </bean>
-    <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
-        <constructor-arg index="0" value="http://119.28.142.56/solr/collection1"/>
-    </bean>
+
 </beans>

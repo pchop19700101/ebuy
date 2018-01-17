@@ -1,5 +1,8 @@
+package cn.porkchop.ebuy.test;
+
 import cn.porkchop.ebuy.mapper.SearchItemMapper;
 import cn.porkchop.ebuy.pojo.SearchItem;
+import cn.porkchop.ebuy.search.dao.SearchItemDao;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -16,6 +19,13 @@ import java.util.List;
 import java.util.Map;
 
 public class TestSolr {
+    @Test
+    public void testGetSolrServer(){
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
+        SearchItemDao searchItemDao= classPathXmlApplicationContext.getBean(SearchItemDao.class);
+        System.out.println(searchItemDao);
+
+    }
     /**
      * 打印从数据库中获取的所有的商品
      * @date 2018/1/13 11:28
@@ -23,7 +33,7 @@ public class TestSolr {
      */
     @Test
     public void testGetAllItems(){
-        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-dao.xml");
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
         SearchItemMapper bean = classPathXmlApplicationContext.getBean(SearchItemMapper.class);
         List<SearchItem> itemlist = bean.getAllItem();
         for (SearchItem item:itemlist){
@@ -31,7 +41,7 @@ public class TestSolr {
         }
     }
     /**
-     * 添加或者删除文档
+     * 添加或者修改文档
      *
      * @date 2018/1/11 19:47
      * @author porkchop

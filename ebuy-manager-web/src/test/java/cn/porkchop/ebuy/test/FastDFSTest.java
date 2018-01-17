@@ -3,7 +3,7 @@ package cn.porkchop.ebuy.test;
 import org.csource.fastdfs.*;
 import org.junit.Test;
 
-public class FastDFS {
+public class FastDFSTest {
     @Test
     public void testFileUpload() throws Exception {
         // 1、加载配置文件，配置文件中的内容就是tracker服务的地址。

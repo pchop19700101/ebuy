@@ -8,7 +8,7 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
-    <context:component-scan base-package="cn.porkchop.ebuy.search.controller"/>
+    <context:component-scan base-package="cn.porkchop.ebuy.sso.controller"/>
     <mvc:annotation-driven/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -21,12 +21,12 @@
     <mvc:resources location="/images/" mapping="/images/**"/>
 
     <!-- 引用dubbo服务 -->
-    <dubbo:application name="ebuy-search-web"/>
+    <dubbo:application name="ebuy-sso-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.193.128:2181"/>
-    <dubbo:reference interface="cn.porkchop.ebuy.search.service.SearchItemService" id="searchItemService"/>
+    <!--<dubbo:reference interface="cn.porkchop.ebuy.search.service.SearchItemService" id="searchItemService"/>-->
 
     <!-- 加载常量的配置文件 -->
     <context:property-placeholder location="classpath:conf/resource.properties"/>
 
-    <bean class="cn.porkchop.ebuy.search.exception.GlobalExceptionReslover"/>
+    <bean class="cn.porkchop.ebuy.sso.exception.GlobalExceptionReslover"/>
 </beans>

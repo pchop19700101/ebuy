@@ -1,4 +1,4 @@
-package cn.porkchop.ebuy.search.service.message;
+package cn.porkchop.ebuy.search.message;
 
 import cn.porkchop.ebuy.search.service.SearchItemService;
 import org.springframework.beans.factory.annotation.Autowired;

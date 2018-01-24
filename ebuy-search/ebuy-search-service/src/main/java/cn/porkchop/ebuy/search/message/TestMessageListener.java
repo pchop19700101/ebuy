@@ -1,4 +1,4 @@
-package cn.porkchop.ebuy.search.service.message;
+package cn.porkchop.ebuy.search.message;
 
 import javax.jms.JMSException;
 import javax.jms.Message;

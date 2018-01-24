@@ -9,23 +9,15 @@
         <relativePath>../ebuy-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>war</packaging>
-    <artifactId>ebuy-item-web</artifactId>
-    <dependencies>
 
+    <artifactId>ebuy-sso-web</artifactId>
+
+    <packaging>war</packaging>
+    <dependencies>
         <dependency>
             <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-manager-interface</artifactId>
+            <artifactId>ebuy-sso-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-search-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-all</artifactId>
         </dependency>
         <!-- JSP相关 -->
         <dependency>
@@ -95,19 +87,6 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
-        <!-- 文件上传组件 -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-io</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -117,10 +96,9 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/</path>
-                    <port>8086</port>
+                    <port>8088</port>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>

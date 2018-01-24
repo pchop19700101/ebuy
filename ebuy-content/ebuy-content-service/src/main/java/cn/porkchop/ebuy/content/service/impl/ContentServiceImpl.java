@@ -31,7 +31,7 @@ public class ContentServiceImpl implements ContentService {
         content.setCreated(new Date());
         tbContentMapper.insert(content);
         //把redis中和此对象相同类别的内容删除,重新从数据库中读取
-        cluster.hdel(CONTENT_CATEGORY,content.getCategoryId()+"");
+        cluster.hdel(CONTENT_CATEGORY, content.getCategoryId() + "");
         return E3Result.ok();
     }
 
@@ -39,7 +39,7 @@ public class ContentServiceImpl implements ContentService {
     public List<TbContent> getContentListByCategoryId(long cid) {
         //先从redis获取
         String json = cluster.hget(CONTENT_CATEGORY, cid + "");
-        if(StringUtils.isNotBlank(json)){
+        if (StringUtils.isNotBlank(json)) {
             List<TbContent> tbContents = JsonUtils.jsonToList(json, TbContent.class);
             return tbContents;
         }
@@ -48,8 +48,10 @@ public class ContentServiceImpl implements ContentService {
         TbContentExample.Criteria criteria = tbContentExample.createCriteria();
         criteria.andCategoryIdEqualTo(cid);
         List<TbContent> tbContentList = tbContentMapper.selectByExampleWithBLOBs(tbContentExample);
-        //保存到redis中
-        cluster.hset(CONTENT_CATEGORY,cid+"", JsonUtils.objectToJson(tbContentList));
+        if (tbContentList != null && tbContentList.size() > 0) {
+            //保存到redis中
+            cluster.hset(CONTENT_CATEGORY, cid + "", JsonUtils.objectToJson(tbContentList));
+        }
         return tbContentList;
     }
 }

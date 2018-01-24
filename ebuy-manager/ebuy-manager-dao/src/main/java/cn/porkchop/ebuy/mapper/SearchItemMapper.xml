@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.porkchop.ebuy.mapper.SearchItemMapper">
-    <resultMap  type="cn.porkchop.ebuy.pojo.SearchItem" id="SearchItemMap">
+    <resultMap type="cn.porkchop.ebuy.pojo.SearchItem" id="SearchItemMap">
         <id column="id" property="id"/>
         <result column="sell_point" property="sellPoint"/>
         <result column="category_name" property="categoryName"/>
     </resultMap>
     <select id="getAllItem" resultMap="SearchItemMap">
-        select item.id,item.title,item.sell_point,item.price,item.image,cat.name category_name
-        from tb_item item LEFT JOIN tb_item_cat cat on item.cid =cat.id
-        where item.status=1
+        SELECT
+            item.id,
+            item.title,
+            item.sell_point,
+            item.price,
+            item.image,
+            cat.name category_name
+        FROM tb_item item LEFT JOIN tb_item_cat cat ON item.cid = cat.id
+        WHERE item.status = 1
+    </select>
+    <select id="getItemById" parameterType="long" resultMap="SearchItemMap">
+        SELECT
+            item.id,
+            item.title,
+            item.sell_point,
+            item.price,
+            item.image,
+            cat.name category_name
+        FROM tb_item item LEFT JOIN tb_item_cat cat ON item.cid = cat.id
+        WHERE item.status = 1 and item.id=#{id}
     </select>
 </mapper>

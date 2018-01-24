@@ -69,4 +69,24 @@ public class SearchItemServiceImpl implements SearchItemService {
         return searchResult;
     }
 
+    @Override
+    public E3Result addDocument(long id) {
+        try {
+            SearchItem searchItem = searchItemMapper.getItemById(id);
+            SolrInputDocument document = new SolrInputDocument();
+            document.addField("id", searchItem.getId());
+            document.addField("item_title", searchItem.getTitle());
+            document.addField("item_sell_point", searchItem.getSellPoint());
+            document.addField("item_price", searchItem.getPrice());
+            document.addField("item_image", searchItem.getImage());
+            document.addField("item_category_name", searchItem.getCategoryName());
+            solrServer.add(document);
+            solrServer.commit();
+            return E3Result.ok();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return E3Result.build(500,"商品添加到索引库失败");
+        }
+    }
+
 }

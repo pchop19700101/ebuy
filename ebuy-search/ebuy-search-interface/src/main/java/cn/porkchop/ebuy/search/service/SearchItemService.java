@@ -22,4 +22,10 @@ public interface SearchItemService {
     */
    SearchResult search(String keyWord,int page,int rows) throws SolrServerException;
 
+   /**
+    * 从数据库中查出商品,并添加到文档域
+    * @date 2018/1/21 21:18
+    * @author porkchop
+    */
+   E3Result addDocument(long id);
 }

@@ -59,7 +59,7 @@ public class SearchItem implements Serializable {
     }
 
     public String[] getImages() {
-        return image.split(",");
+        return image==null?new String[]{"#"}:image.split(",");
     }
 
     @Override

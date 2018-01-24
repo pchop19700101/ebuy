@@ -39,7 +39,7 @@ public class ActiveMQTest {
 
 
         //接收消息
-        Queue queue = session.createQueue("test-queue");
+        Queue queue = session.createQueue("spring-queue");
         MessageConsumer consumer = session.createConsumer(queue);
         consumer.setMessageListener(new MessageListener() {
 
@@ -56,7 +56,7 @@ public class ActiveMQTest {
                 }
             }
         });
-        System.in.read();
+        //System.in.read();
 
 
         //关闭
@@ -104,7 +104,7 @@ public class ActiveMQTest {
                 try {
                     TextMessage textMessage = (TextMessage) message;
                     String text = null;
-                    text= textMessage.getText();
+                    text = textMessage.getText();
                     System.out.println(text);
                 } catch (JMSException e) {
                     e.printStackTrace();
@@ -112,7 +112,7 @@ public class ActiveMQTest {
             }
         });
 
-        System.in.read();
+        //System.in.read();
         consumer.close();
         session.close();
         connection.close();

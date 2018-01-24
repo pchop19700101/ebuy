@@ -1,9 +1,6 @@
 package cn.porkchop.ebuy.service;
 
-import cn.porkchop.ebuy.pojo.E3Result;
-import cn.porkchop.ebuy.pojo.EasyUIDataGridResult;
-import cn.porkchop.ebuy.pojo.EasyUITreeNode;
-import cn.porkchop.ebuy.pojo.TbItem;
+import cn.porkchop.ebuy.pojo.*;
 
 public interface ItemService {
     /**
@@ -23,11 +20,16 @@ public interface ItemService {
     EasyUIDataGridResult getItemList(int page, int rows);
 
     /**
-     * 添加商品
+     * 添加商品,并发送添加商品的消息,内容是商品的id
      *
      * @date 2017/12/29 20:18
      * @author porkchop
      */
     E3Result addItem(TbItem tbItem, String desc);
-
+    /**
+     * 根据id查询商品描述
+     * @date 2018/1/22 21:18
+     * @author porkchop
+     */
+    TbItemDesc getItemDescByItemId(long id);
 }

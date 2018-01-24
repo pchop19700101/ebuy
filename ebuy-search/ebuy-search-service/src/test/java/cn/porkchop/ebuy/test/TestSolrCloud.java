@@ -22,7 +22,7 @@ public class TestSolrCloud {
         SolrInputDocument document = new SolrInputDocument();
         document.addField("item_title", "测试商品");
         document.addField("item_price", "100");
-        document.addField("id", "doc001");
+        document.addField("id", "001");
         solrServer.add(document);
         //提交
         solrServer.commit();
@@ -37,7 +37,8 @@ public class TestSolrCloud {
     @Test
     public void deleteDocumentByQuery() throws IOException, SolrServerException {
         CloudSolrServer solrServer = new CloudSolrServer("192.168.193.128:2181,192.168.193.128:2182,192.168.193.128:2183");
-        solrServer.deleteByQuery("id:doc01");
+        solrServer.setDefaultCollection("collection2");
+        solrServer.deleteByQuery("id:001");
         solrServer.commit();
     }
 }

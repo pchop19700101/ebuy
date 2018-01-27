@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>cn.porkchop.ebuy</groupId>
-            <artifactId>ebuy-manager-interface</artifactId>
+            <artifactId>ebuy-sso-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

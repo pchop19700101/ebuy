@@ -28,6 +28,6 @@
     </tx:advice>
     <!-- 切面 -->
     <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.porkchop.ebuy.service.*.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.porkchop.ebuy.*.service..*.*(..))" />
     </aop:config>
 </beans>

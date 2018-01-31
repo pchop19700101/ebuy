@@ -1,4 +1,4 @@
-package cn.porkchop.ebuy.service;
+package cn.porkchop.ebuy.manager.service;
 
 import cn.porkchop.ebuy.pojo.EasyUITreeNode;
 

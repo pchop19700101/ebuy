@@ -1,10 +1,10 @@
-package cn.porkchop.ebuy.service.impl;
+package cn.porkchop.ebuy.manager.service.impl;
 
 import cn.porkchop.ebuy.mapper.TbItemCatMapper;
 import cn.porkchop.ebuy.pojo.EasyUITreeNode;
 import cn.porkchop.ebuy.pojo.TbItemCat;
 import cn.porkchop.ebuy.pojo.TbItemCatExample;
-import cn.porkchop.ebuy.service.ItemCatService;
+import cn.porkchop.ebuy.manager.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

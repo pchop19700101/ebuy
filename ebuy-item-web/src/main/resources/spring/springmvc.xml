@@ -22,7 +22,7 @@
     <!-- 引用dubbo服务 -->
     <dubbo:application name="ebuy-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.193.128:2181"/>
-    <dubbo:reference interface="cn.porkchop.ebuy.service.ItemService" id="itemService"/>
+    <dubbo:reference interface="cn.porkchop.ebuy.manager.service.ItemService" id="itemService"/>
 
     <!-- 加载常量的配置文件 -->
     <context:property-placeholder location="classpath:conf/resource.properties"/>

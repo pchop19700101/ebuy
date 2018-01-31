@@ -25,7 +25,7 @@
     </bean>
     <!--这个是主题目的地，一对多的 -->
     <bean id="addItemTopic" class="org.apache.activemq.command.ActiveMQTopic">
-        <constructor-arg value="add-item--topic"/>
+        <constructor-arg value="add-item-topic"/>
     </bean>
     <!-- 接收消息 -->
     <!-- 配置监听器 -->

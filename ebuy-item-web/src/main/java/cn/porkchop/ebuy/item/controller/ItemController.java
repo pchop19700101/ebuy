@@ -1,9 +1,8 @@
 package cn.porkchop.ebuy.item.controller;
 
 import cn.porkchop.ebuy.pojo.Item;
-import cn.porkchop.ebuy.pojo.TbItem;
 import cn.porkchop.ebuy.pojo.TbItemDesc;
-import cn.porkchop.ebuy.service.ItemService;
+import cn.porkchop.ebuy.manager.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

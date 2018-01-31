@@ -1,10 +1,10 @@
-package cn.porkchop.ebuy.service.impl;
+package cn.porkchop.ebuy.manager.service.impl;
 
 import cn.porkchop.ebuy.jedis.JedisClient;
 import cn.porkchop.ebuy.mapper.TbItemDescMapper;
 import cn.porkchop.ebuy.mapper.TbItemMapper;
 import cn.porkchop.ebuy.pojo.*;
-import cn.porkchop.ebuy.service.ItemService;
+import cn.porkchop.ebuy.manager.service.ItemService;
 import cn.porkchop.ebuy.utils.IDUtils;
 import cn.porkchop.ebuy.utils.JsonUtils;
 import com.github.pagehelper.PageHelper;
@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
-import redis.clients.jedis.JedisCluster;
 
 import javax.annotation.Resource;
 import javax.jms.Destination;

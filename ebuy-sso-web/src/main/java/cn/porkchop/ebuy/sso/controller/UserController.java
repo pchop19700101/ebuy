@@ -7,6 +7,7 @@ import cn.porkchop.ebuy.utils.JsonUtils;
 import jdk.nashorn.internal.ir.RuntimeNode;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Value("${USER_SESSION_EXPIRE_SECOND}")
+    private int USER_SESSION_EXPIRE_SECOND;
 
     @RequestMapping("/user/check/{param}/{type}")
     @ResponseBody
@@ -46,6 +49,7 @@ public class UserController {
             cookie.setDomain(domain.substring(domain.indexOf(".")));
         }
         cookie.setPath("/");
+        cookie.setMaxAge(USER_SESSION_EXPIRE_SECOND);
         response.addCookie(cookie);
         return e3Result;
     }

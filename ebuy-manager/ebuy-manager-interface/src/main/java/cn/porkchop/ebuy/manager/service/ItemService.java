@@ -1,11 +1,11 @@
-package cn.porkchop.ebuy.service;
+package cn.porkchop.ebuy.manager.service;
 
 import cn.porkchop.ebuy.pojo.*;
 
 public interface ItemService {
     /**
      * 根据商品id获得商品信息
-     *
+     * @return 未查到就返回null
      * @date 2017/12/26 19:15
      * @author porkchop
      */

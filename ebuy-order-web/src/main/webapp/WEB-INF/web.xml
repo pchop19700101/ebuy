@@ -3,7 +3,7 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
-    <display-name>e3-cart-web</display-name>
+    <display-name>e3-order-web</display-name>
 
     <!-- 解决post乱码 -->
     <filter>
@@ -36,8 +36,5 @@
         <servlet-name>ebuy-manager</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ebuy-manager</servlet-name>
-        <url-pattern>*.action</url-pattern>
-    </servlet-mapping>
+
 </web-app>
